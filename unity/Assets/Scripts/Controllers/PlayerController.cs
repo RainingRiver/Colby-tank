@@ -18,7 +18,7 @@ public class PlayerController : Controller
         {
             if(GameManager.instance.players != null)
             {
-                GameManager.instance.players.Add(this);
+                GameManager.instance.players.Add(this); 
             }
         }
 

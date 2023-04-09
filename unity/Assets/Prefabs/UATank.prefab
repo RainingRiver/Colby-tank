@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: -3978507953837185548}
   - component: {fileID: -5137115521263975549}
   - component: {fileID: -5121832108657237851}
+  - component: {fileID: 5713281190971168889}
   m_Layer: 0
   m_Name: UATank
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3929181966382303927}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.24979915, z: 0, w: 0.9682977}
   m_LocalPosition: {x: 0.32365894, y: 0, z: 0.34211826}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -244,4 +245,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e5331712490ba44a690fa2f0383574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  currentHealth: 0
+  maxHealth: 30
+--- !u!114 &5713281190971168889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929181966382303927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18eec2abbc00b96469e891ef490c2482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

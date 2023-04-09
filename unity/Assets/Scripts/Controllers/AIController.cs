@@ -44,6 +44,8 @@ public class AiController : Controller
     {
         currentState= AIState.Idle;
 
+        GameManager.instance.ai.Add(this);
+
         base.Start();
     }
 

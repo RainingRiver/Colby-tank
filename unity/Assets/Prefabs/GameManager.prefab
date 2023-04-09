@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2616461093106086760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2616461093106086762}
+  - component: {fileID: 2616461093106086763}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2616461093106086762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616461093106086760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2616461093106086763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616461093106086760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c14684c08ed97d4d974b0a490b16382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControllerPrefab: {fileID: 1272911712553817997, guid: 59872f2c1503af842992ae70cfe5ad76, type: 3}
+  tankPawnPrefab: {fileID: 3929181966382303927, guid: 2454fa9d88bac5b46a78914570915e55, type: 3}
+  playerSpawnTransform: {fileID: 8951916824410248894, guid: 47b6aace40a83014593b88390a18898c, type: 3}
+  players: []
+  doSpawn: 1
+  aiTankPawnPrefabs:
+  - {fileID: 6149960913940853316, guid: 7f5ef7e498ead8e4897542391d57e0b8, type: 3}
+  - {fileID: 1254205115278788401, guid: 514b68a627ee8aa4bbc76ffebd99b4d0, type: 3}
+  - {fileID: 1314009264118581640, guid: 5c4795f9d8e8738409e115a3673e7a53, type: 3}
+  aiSpawnTransform: {fileID: 970770279665109136, guid: d5c4c442214bc574b8133c17e696ae1e, type: 3}
+  ai: []
+  doGen: 1
+  mapGeneratorPrefab: {fileID: 0}
+  mapType: 0
+  customSeed: 0
+  mapGenerator: {fileID: 0}

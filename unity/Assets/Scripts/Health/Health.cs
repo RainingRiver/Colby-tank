@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private float currentHealth;
+    public float currentHealth;
     public float maxHealth;
 
     // Start is called before the first frame update
@@ -23,6 +23,12 @@ public class Health : MonoBehaviour
         {
             Die(source);
         }
+    }
+
+    public void Heal(float amount) 
+    { 
+        currentHealth = currentHealth + amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 
     public void Die(Pawn source)
