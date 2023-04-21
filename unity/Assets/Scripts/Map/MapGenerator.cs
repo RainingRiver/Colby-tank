@@ -17,6 +17,7 @@ public class MapGenerator : MonoBehaviour
     public enum MapType { mapOfTheDay, random, custom };
     public MapType mapType;
     public List<Transform> playerSpawnPoints = new List<Transform>();
+    public List<Transform> playerTwoSpawnPoints = new List<Transform>();
     public List<Transform> enemySpawnPoints = new List<Transform>();
 
     // Start is called before the first frame update
@@ -41,6 +42,9 @@ public class MapGenerator : MonoBehaviour
 
         // Get all player spawn points
         FindAllPlayerSpawnPoints();
+
+        // Get all player spawn points
+        FindAllPlayerTwoSpawnPoints();
 
         // Get all enemy spawn points
         FindAllEnemySpawnPoints();
@@ -151,6 +155,15 @@ public class MapGenerator : MonoBehaviour
         {
             // Add its transform to spawnPoints list
             playerSpawnPoints.Add(PlayerSpawnPoint.transform);
+        }
+    }
+    public void FindAllPlayerTwoSpawnPoints()
+    {
+        PlayerTwoSpawnPoint[] PlayerTwoSpawnPoints = FindObjectsOfType<PlayerTwoSpawnPoint>();
+        foreach (PlayerTwoSpawnPoint PlayerTwoSpawnPoint in PlayerTwoSpawnPoints)
+        {
+            // Add its transform to spawnPoints list
+            playerSpawnPoints.Add(PlayerTwoSpawnPoint.transform);
         }
     }
 

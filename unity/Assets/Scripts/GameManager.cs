@@ -9,11 +9,18 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     //Prefabs
+    //tank 1
     public GameObject playerControllerPrefab;
     public GameObject tankPawnPrefab;
     public Transform playerSpawnTransform;
     public List<PlayerController> players;
 
+    //tank 2
+    public GameObject tankPawnTwoPrefab;
+    public Transform playerTwoSpawnTransform;
+    public List<PlayerController> playerTwo;
+
+    //AI
     public bool doSpawn = true;
     public List<GameObject> aiTankPawnPrefabs = new List<GameObject>();
     public Transform aiSpawnTransform;
@@ -42,6 +49,8 @@ public class GameManager : MonoBehaviour
 
         players= new List<PlayerController>();
 
+        playerTwo= new List<PlayerController>();
+
         ai= new List<AiController>();
     }
 
@@ -49,6 +58,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SpawnPlayer();
+        SpawnPlayerTwo();
         SpawnEnemy();
     }
 
@@ -66,6 +76,27 @@ public class GameManager : MonoBehaviour
         // Then spawn player
         GameObject newPlayerObj = Instantiate(playerControllerPrefab, Vector3.zero, Quaternion.identity);
         GameObject newPawnObj = Instantiate(tankPawnPrefab, playerSpawnTransform.position, playerSpawnTransform.rotation);
+
+        Controller newController = newPlayerObj.GetComponent<Controller>();
+        Pawn newPawn = newPawnObj.GetComponent<Pawn>();
+
+        newController.pawn = newPawn;
+    }
+
+    public void SpawnPlayerTwo()
+    {
+        // Check if player transform is null, then randomly set a spawn
+        if (playerTwoSpawnTransform == null)
+        {
+
+            // Get a random player spawn transform from the map generator
+            Transform spawnPoint = mapGenerator.playerTwoSpawnPoints[Random.Range(0, mapGenerator.playerTwoSpawnPoints.Count)];
+            playerTwoSpawnTransform = spawnPoint;
+        }
+
+        // Then spawn player
+        GameObject newPlayerObj = Instantiate(playerControllerPrefab, Vector3.zero, Quaternion.identity);
+        GameObject newPawnObj = Instantiate(tankPawnPrefab, playerTwoSpawnTransform.position, playerTwoSpawnTransform.rotation);
 
         Controller newController = newPlayerObj.GetComponent<Controller>();
         Pawn newPawn = newPawnObj.GetComponent<Pawn>();
